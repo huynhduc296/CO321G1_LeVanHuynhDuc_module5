@@ -1,0 +1,57 @@
+<form th:action="@{/customers/edit}" th:object="${customerDto}" method="post">
+  <h2>Register</h2>
+  <p class="hint-text">Edit Customer</p>
+  <input type="hidden" class="form-control" name="customerId" placeholder="customerId" required="required"
+         th:field="*{customerId}">
+  <div class="form-group">
+    <input type="text" class="form-control" name="code" placeholder="code" required="required"
+           th:field="*{customerCode}">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="name" placeholder="name" required="required"
+           th:field="*{customerName}">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="Birthday" placeholder="Birthday" required="required"
+           th:field="*{customerBirthday}">
+  </div>
+  <div class="form-group">
+    <label for="inputGender">Gender</label>
+    <div>
+      <select class="custom-select custom-select-sm" id="inputGender" th:field="*{customerGender}">
+        <option value="Male">Male</option>
+        <option value="Female">Female</option>
+        <option value="Other">Other</option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="customerIdCard" placeholder="customerIdCard" required="required"
+           th:field="*{customerIdCard}">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="customerPhone" placeholder="customerPhone" required="required"
+           th:field="*{customerPhone}">
+  </div>
+  <div class="form-group">
+    <input type="email" class="form-control" name="email" placeholder="email" required="required"
+           th:field="*{customerEmail}">
+  </div>
+  <div class="form-group">
+    <input type="text" class="form-control" name="customerAddress" placeholder="customerAddress" required="required"
+           th:field="*{customerAddress}">
+  </div>
+  <div class="form-group">
+    <label for="inputType">Type customer</label>
+    <div>
+      <select class="custom-select custom-select-sm" id="inputType" th:field="*{customerType}">
+        <option th:each="customerType : ${customerTypes}" th:value="${customerType.customerTypeId}"
+                th:text="${customerType.customerTypeName}"></option>
+      </select>
+    </div>
+  </div>
+  <div class="form-group">
+    <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Edit">
+  </div>
+</form>
+

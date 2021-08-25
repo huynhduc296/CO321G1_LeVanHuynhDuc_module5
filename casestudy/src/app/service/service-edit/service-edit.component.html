@@ -1,0 +1,63 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en" xmlns:th="http://www.thymeleaf.org">-->
+<!--<head>-->
+<!--  <meta charset="utf-8">-->
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">-->
+<!--  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700">-->
+<!--  <title>Bootstrap Simple Registration Form</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--<div class="signup-form">-->
+<!--  <form th:action="@{/services/edit}" th:object="${ServiceDto}" method="post">-->
+<!--    <h2>Register</h2>-->
+<!--    <p class="hint-text">edit employee</p>-->
+<!--    <input type="hidden" class="form-control" name="serviceId" placeholder="serviceId" required="required" th:field="*{serviceId}">-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="serviceName" placeholder="serviceName" required="required" th:field="*{serviceName}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="area" placeholder="area" required="required"th:field="*{area}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="cost" placeholder="cost" required="required"th:field="*{cost}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="maxPeople" placeholder="maxPeople" required="required"th:field="*{maxPeople}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="standardRoom" placeholder="standardRoom" required="required"th:field="*{standardRoom}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="description" placeholder="description" required="required"th:field="*{description}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="poolArea" placeholder="poolArea" required="required"th:field="*{poolArea}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="text" class="form-control" name="address" placeholder="address" required="required"th:field="*{numberFloor}">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="inputType">serviceType</label>-->
+<!--      <div>-->
+<!--        <select class="custom-select custom-select-sm"  id="inputType" th:field="*{serviceType}">-->
+<!--          <option th:each="serviceType : ${serviceTypes}" th:value="${serviceType.serviceTypeId}"-->
+<!--                  th:text="${serviceType.serviceTypeName}"></option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <label for="inputType">rentType</label>-->
+<!--      <div>-->
+<!--        <select class="custom-select custom-select-sm"th:field="*{rentType}">-->
+<!--          <option th:each="rentType : ${rentTypes}" th:value="${rentType.rentTypeId}"-->
+<!--                  th:text="${rentType.rentTypeName}"></option>-->
+<!--        </select>-->
+<!--      </div>-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--      <input type="submit" class="btn btn-success" style="margin-left: 174px;width: 100px" value="Edit">-->
+<!--    </div>-->
+<!--  </form>-->
+<!--</div>-->
+<!--</body>-->
+<!--</html>-->

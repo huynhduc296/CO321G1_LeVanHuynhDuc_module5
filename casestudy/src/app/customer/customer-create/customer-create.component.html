@@ -1,0 +1,56 @@
+<div class="signup-form">
+  <form [formGroup]="customer"(ngSubmit)="getInfoCustomer()">
+    <h2>Register</h2>
+    <p class="hint-text">Create Customer</p>
+    <div class="form-group">
+      <label for="input">code</label>
+      <input type="text" class="form-control" name="code" placeholder="code" formControlName="code">
+    </div>
+    <div class="form-group">
+      <label for="input">name</label>
+      <input type="text" class="form-control" name="name" placeholder="name" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="input">Birthday</label>
+      <input type="date" class="form-control" name="Birthday" placeholder="Birthday" formControlName="Birthday">
+    </div>
+    <div class="form-group">
+      <label for="input">Gender</label>
+      <div>
+        <select class="custom-select custom-select-sm" id="input" formControlName="gender" >
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="input">customerIdCard</label>
+      <input type="text" class="form-control" name="customerIdCard" placeholder="customerIdCard" formControlName="customerIdCard">
+
+    </div>
+    <div class="form-group">
+      <label for="input">customerPhone</label>
+      <input type="text" class="form-control" name="customerPhone" placeholder="customerPhone" formControlName="customerPhone">
+    </div>
+    <div class="form-group">
+      <label for="input">email</label>
+      <input type="email" class="form-control" name="email" placeholder="email" formControlName="email">
+    </div>
+    <div class="form-group">
+      <label for="input">customerAddress</label>
+      <input type="text" class="form-control" name="customerAddress" placeholder="customerAddress" formControlName="customerAddress">
+    </div>
+    <div class="form-group">
+      <label>Type customer</label>
+      <div>
+        <select class="form-control"  formControlName="customerType">
+          <option [ngValue]="null" [hidden] ="true">chọn type customer</option>
+        </select>
+      </div>
+    </div>
+    <div class="form-group">
+      <input class="btn btn-danger mt-3" type="submit" value="create">
+    </div>
+  </form>
+</div>
