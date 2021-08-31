@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup,} from "@angular/forms";
-import {CustomerType} from "../../model/CustomerType";
+import {Component, OnInit} from '@angular/core';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
+import {CustomerService} from '../customer.service';
+import {Router} from '@angular/router';
+import {TypeCustomer} from '../../model/type-customer';
 
 @Component({
   selector: 'app-customer-create',
@@ -8,23 +10,46 @@ import {CustomerType} from "../../model/CustomerType";
   styleUrls: ['./customer-create.component.css']
 })
 export class CustomerCreateComponent implements OnInit {
-  customer: FormGroup;
-  customerTypes: CustomerType[] = [];
-  customerType = null;
 
-  constructor() {
-    this.customer=new FormGroup({
-      code:new FormControl(""),name:new FormControl(""),Birthday:new FormControl(""),
-      gender:new FormControl(""),customerIdCard:new FormControl(""),customerPhone:new FormControl(""),
-      email:new FormControl(""),customerAddress:new FormControl(""),customerType:new FormControl(this.customerType)
-    })
+  customerFormGroup: FormGroup = new FormGroup({
+    idCustomer: new FormControl('', [Validators.pattern('^KH-[\\d]{4}$'), Validators.required]),
+    name: new FormControl(),
+    idCard: new FormControl('', [Validators.pattern('^[0-9]{9}$'), Validators.required]),
+    dateOfBirth: new FormControl(),
+    phone: new FormControl('',
+      [Validators.pattern('^(090|091|\\(84\\)\\+90|\\(84\\)\\+91)[\\d]{7}$'), Validators.required]),
+    email: new FormControl('', [Validators.email, Validators.required]),
+    address: new FormControl(),
+    typeCustomer: new FormControl(),
+  });
+
+  typeCustomers: TypeCustomer[];
+  constructor(private customerService: CustomerService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
+    this.customerService.findAllTypeCustomer().subscribe((data) => {
+      this.typeCustomers = data;
+    });
   }
 
-  getInfoCustomer() {
-    // @ts-ignore
-    console.log(this.customer.value.name);
+  submit() {
+    const customer = this.customerFormGroup.value;
+    this.customerService.save(customer).subscribe(() => {
+    }, e => {
+
+    }, () =>{
+      this.router.navigateByUrl('/list');
+    });
+  }
+
+
+  isEmpty(c: AbstractControl) {
+    const v = c.value;
+    return (v.name !== '') ?
+      null : {
+        isemptycode: true
+      };
   }
 }

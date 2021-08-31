@@ -1,0 +1,46 @@
+{
+  "customerList": [
+    {
+      "id": 4,
+      "idCustomer": "KH-0001",
+      "name": "GDDDdw",
+      "idCard": "123123123",
+      "dateOfBirth": "2021-06-12",
+      "phone": "0904562156",
+      "email": "ss@mg",
+      "address": "123123",
+      "typeCustomer": {
+        "id": "3",
+        "name": "gold"
+      }
+    },
+    {
+      "id": 5,
+      "idCustomer": "KH-0006",
+      "name": "Duc",
+      "idCard": "213423324",
+      "dateOfBirth": "2021-08-07",
+      "phone": "0901234543",
+      "email": "duc@gmail.com",
+      "address": "324",
+      "typeCustomer": {
+        "id": "2",
+        "name": "platinum"
+      }
+    }
+  ],
+  "typeCustomerList": [
+    {
+      "id": "1",
+      "name": "diamond"
+    },
+    {
+      "id": "2",
+      "name": "platinum"
+    },
+    {
+      "id": "3",
+      "name": "gold"
+    }
+  ]
+}
